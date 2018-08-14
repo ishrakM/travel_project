@@ -111,12 +111,26 @@
 			                <?php
 			                    require 'config.php';
 
-			                    $statement="select * from hotels where deletedAt is null order by hotel_id asc";
-			                    $result = mysqli_query($conn, $statement);
+							    if (isset($_GET['pageno'])) {
+							        $pageno = $_GET['pageno'];
+							    } else {
+							        $pageno = 1;
+							    }
 
-			                    if (mysqli_num_rows($result) > 0)
+							    $no_of_records_per_page = 2;
+							    $offset = ($pageno-1) * $no_of_records_per_page;							   
+
+						        $total_pages_sql = "SELECT COUNT(*) FROM hotels";
+						        $result = mysqli_query($conn,$total_pages_sql);
+						        $total_rows = mysqli_fetch_array($result)[0];
+						        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+			                    $statement="select * from hotels where deletedAt is null order by hotel_id asc LIMIT $offset, $no_of_records_per_page";
+			                    $res_data = mysqli_query($conn, $statement);
+
+			                    if (mysqli_num_rows($res_data) > 0)
 			                    {
-			                        while($row = mysqli_fetch_assoc($result))
+			                        while($row = mysqli_fetch_assoc($res_data))
 			                        {
 			                     		$min_price_query= mysqli_query($conn, "SELECT min(price) from room_type WHERE hotel_id= $row[hotel_id]");
 			                     		$min_price= mysqli_fetch_assoc($min_price_query);
@@ -150,14 +164,16 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<ul class="pagination">
-									<li class="disabled"><a href="#">&laquo;</a></li>
-									<li class="active"><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">&raquo;</a></li>
-								</ul>
+							    <ul class="pagination">
+							        <li><a href="?pageno=1">First</a></li>
+							        <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+							            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+							        </li>
+							        <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+							            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+							        </li>
+							        <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+							    </ul>
 							</div>
 						</div>
 					</div>
