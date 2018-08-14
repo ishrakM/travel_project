@@ -1,7 +1,8 @@
 <?php 
     require 'config.php';
-    session_start();
-    if($_SERVER["REQUEST_METHOD"] == "POST")
+    //session_start();
+
+    if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['form_login']))
     //if(isset($_POST['submit']))
     {
         $username= $_POST['uname'];
@@ -44,8 +45,10 @@
 
       <label for="psw"><b>Password</b></label>
       <input type="password" id="pwd" placeholder="Enter Password" name="pwd" required>
+
+      <input type="hidden" name="form_login" value="1"/>
         
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" name="login_form" class="login-button" value="Login">Login</button>
 
     </div>
 
