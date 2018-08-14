@@ -1,4 +1,5 @@
 <?php
+if(!isset($_SESSION)) { session_start(); }
 
 $hotel_location= $_GET['hotel_location'];
 
@@ -61,32 +62,15 @@ $hotel_location= $_GET['hotel_location'];
 
 	</head>
 	<body>
-		
+
+<?php include 'Admin/login.php'; ?>
+
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="index.php">Ghurte Jai</a></div>
-						</div>
-						<div class="col-xs-10 text-right menu-1">
-							<ul>
-								<li><a href="index.php">Home</a></li>
-								<li><a href="tours.php">Tours</a></li>
-								<li class="active"><a href="hotels.php">Hotels</a></li>
-								<li><a href="services.php">Services</a></li>
-								<li><a href="blog.php">Blog</a></li>
-								<li><a href="about.php">About</a></li>
-								<li><a href="contact.php">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
+
+<?php include 'nav.php'; ?>
+
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
