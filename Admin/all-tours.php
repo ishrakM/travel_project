@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           echo "<td>".$row['location']."</td>";
                           echo "<td>".$row['price']."</td>";
                           echo "<td>".$row['days']."</td>";
-                          echo "<td><a href=\"delete-tours.php?tour_id=$row[tour_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit-tours.php?tour_id=$row[tour_id]\">Edit</a> | <a href=\"view-tours.php?tour_id=$row[tour_id]\">View</a></td>";
+                          echo "<td><a href=\"delete-tours.php?tour_id=$row[tour_id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a> | <a href=\"edit-tours.php?tour_id=$row[tour_id]\">Edit</a> | <a href=\"http://localhost/travel/tour-place.php?tour_id=$row[tour_id]\">View</a></td>";
                           echo "</tr>";
                         }
                     }
