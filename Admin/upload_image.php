@@ -3,7 +3,7 @@
 $accepted_origins = array("http://localhost");
 
 // Images upload path
-$imageFolder = "dist/images";
+$imageFolder = "dist/img/";
 
 reset($_FILES);
 $temp = current($_FILES);

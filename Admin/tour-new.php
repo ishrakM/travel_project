@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']== "POST")
 {
   require 'config.php';
 
-  $target_dir = "dist/img";
+  $target_dir = "dist/img/";
   $target_file = $target_dir . basename($_FILES["user_img"]["name"]);
   move_uploaded_file($_FILES["user_img"]["tmp_name"], $target_file);
 
