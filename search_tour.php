@@ -1,8 +1,12 @@
 <?php
 if(!isset($_SESSION)) { session_start(); }
 
-$tour_location= $_GET['tour_location'];
-$_SESSION['tour_location']= $tour_location;
+if(isset($_GET['submit']))
+{
+	$tour_location= $_GET['tour_location'];
+	$_SESSION['tour_location']= $tour_location;
+}
+
 
 ?>
 <!DOCTYPE HTML>
@@ -109,12 +113,12 @@ $_SESSION['tour_location']= $tour_location;
 							    $no_of_records_per_page = 2;
 							    $offset = ($pageno-1) * $no_of_records_per_page;							   
 
-						        $total_pages_sql = "SELECT COUNT(*) FROM tours where location LIKE '%".$tour_location."%' and deletedAt is NULL";
+						        $total_pages_sql = "SELECT COUNT(*) FROM tours where location LIKE '%".$_SESSION['tour_location']."%' and deletedAt is NULL";
 						        $result = mysqli_query($conn,$total_pages_sql);
 						        $total_rows = mysqli_fetch_array($result)[0];
 						        $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-			                    $statement="SELECT * FROM tours WHERE location LIKE '%".$tour_location."%' and deletedAt is NULL LIMIT $offset, $no_of_records_per_page";
+			                    $statement="SELECT * FROM tours WHERE location LIKE '%".$_SESSION['tour_location']."%' and deletedAt is NULL LIMIT $offset, $no_of_records_per_page";
 			                    $res_data = mysqli_query($conn, $statement);
 
 			                    if (mysqli_num_rows($res_data) > 0)
@@ -146,14 +150,14 @@ $_SESSION['tour_location']= $tour_location;
 						<div class="row">
 							<div class="col-md-12 text-center">
 							    <ul class="pagination">
-							        <li><a href="?tour_location=$_SESSION[tour_location]&pageno=1">First</a></li>
+							        <li><a href="?pageno=1">First</a></li>
 							        <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-							            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?tour_location=$_SESSION[tour_location]&pageno=".($pageno - 1); } ?>">Prev</a>
+							            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
 							        </li>
 							        <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-							            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?tour_location=$_SESSION[tour_location]&pageno=".($pageno + 1); } ?>">Next</a>
+							            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
 							        </li>
-							        <li><a href="?tour_location=$_SESSION[tour_location]&pageno=<?php echo $total_pages; ?>">Last</a></li>
+							        <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
 							    </ul>
 							</div>
 						</div>
