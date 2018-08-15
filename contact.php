@@ -69,13 +69,12 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/cover-img-3.jpg);">
+			   	<li style="background-image: url(images/cover-img-9.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h2>by colorlib.com</h2>
 				   					<h1>Contact us</h1>
 				   				</div>
 				   			</div>
@@ -133,24 +132,22 @@
 						<h3>Contact Information</h3>
 						<div class="row contact-info-wrap">
 							<div class="col-md-3">
-								<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+								<p><span><i class="icon-location"></i></span> 944, Silicon Malancho, <br> Flat: 5A, Road: 14, Baitul Aman Housing Society, Adabor, Dhaka</p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+								<p><span><i class="icon-phone3"></i></span> <a href="tel://8801820570771">+8801820570771</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:khalid.hasan@ieee.org">khalid.hasan@ieee.org</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-globe"></i></span> <a href="#">yoursite.com</a></p>
+								<p><span><i class="icon-globe"></i></span> <a href="http://facebook.com/iamkih">Find Me On Facebook</a></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div id="map" class="colorlib-map"></div>
 	
 		<div id="colorlib-subscribe" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -174,77 +171,8 @@
 			</div>
 		</div>
 
-		<footer id="colorlib-footer" role="contentinfo">
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-3 colorlib-widget">
-						<h4>Tour Agency</h4>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p>
-							<ul class="colorlib-social-icons">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2 colorlib-widget">
-						<h4>Book Now</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Flight</a></li>
-								<li><a href="#">Hotels</a></li>
-								<li><a href="#">Tour</a></li>
-								<li><a href="#">Car Rent</a></li>
-								<li><a href="#">Beach &amp; Resorts</a></li>
-								<li><a href="#">Cruises</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2 colorlib-widget">
-						<h4>Top Deals</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Edina Hotel</a></li>
-								<li><a href="#">Quality Suites</a></li>
-								<li><a href="#">The Hotel Zephyr</a></li>
-								<li><a href="#">Da Vinci Villa</a></li>
-								<li><a href="#">Hotel Epikk</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2">
-						<h4>Blog Post</h4>
-						<ul class="colorlib-footer-links">
-							<li><a href="#">The Ultimate Packing List For Female Travelers</a></li>
-							<li><a href="#">How These 5 People Found The Path to Their Dream Trip</a></li>
-							<li><a href="#">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
-						</ul>
-					</div>
+<?php include 'footer.php'; ?>
 
-					<div class="col-md-3 col-md-push-1">
-						<h4>Contact Information</h4>
-						<ul class="colorlib-footer-links">
-							<li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li><a href="#">yoursite.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<p>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart2" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span> 
-							<span class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> , <a href="http://pexels.com/" target="_blank">Pexels.com</a></span>
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</div>
 
 	<div class="gototop js-top">
@@ -270,9 +198,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/bootstrap-datepicker.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
